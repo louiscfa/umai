@@ -22,7 +22,7 @@ import { AccesComponent } from './acces/acces.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
