@@ -8,9 +8,11 @@ export declare class AppController {
     refreshToken(req: any): Promise<{
         access_token: string;
         refresh_token: string;
+        userId: any;
     }>;
     login(req: any): Promise<{
         access_token: string;
         refresh_token: string;
+        userId: any;
     }>;
 }
