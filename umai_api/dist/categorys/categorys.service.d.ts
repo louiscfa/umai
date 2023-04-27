@@ -9,7 +9,9 @@ export declare class CategorysService {
     getCategorys(): Promise<CategoryEntity[]>;
     getCategory(_id: number): Promise<CategoryEntity>;
     getCategoryProducts(_id: number): Promise<ProduitEntity[]>;
+    getChildsCategoryProducts(_id: number): Promise<ProduitEntity[]>;
     getCategoryChilds(_id: number): Promise<CategoryEntity[]>;
+    getAllCategoryChilds(_id: number): Promise<CategoryEntity[]>;
     createCategory(product: CategoryEntity): Promise<CategoryEntity>;
     updateCategory(product: CategoryEntity): Promise<void>;
     deleteCategory(product: CategoryEntity): Promise<void>;

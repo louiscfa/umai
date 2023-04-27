@@ -30,8 +30,14 @@ let CategorysController = class CategorysController {
     getChilds(params) {
         return this.service.getCategoryChilds(params.id);
     }
+    getAllChilds(params) {
+        return this.service.getAllCategoryChilds(params.id);
+    }
     getProducts(params) {
         return this.service.getCategoryProducts(params.id);
+    }
+    getChildsProducts(params) {
+        return this.service.getChildsCategoryProducts(params.id);
     }
     create(product) {
         return this.service.createCategory(product);
@@ -65,12 +71,26 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], CategorysController.prototype, "getChilds", null);
 __decorate([
+    (0, common_1.Get)(':id/allchilds'),
+    __param(0, (0, common_1.Param)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], CategorysController.prototype, "getAllChilds", null);
+__decorate([
     (0, common_1.Get)(':id/produits'),
     __param(0, (0, common_1.Param)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], CategorysController.prototype, "getProducts", null);
+__decorate([
+    (0, common_1.Get)(':id/childsproduits'),
+    __param(0, (0, common_1.Param)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], CategorysController.prototype, "getChildsProducts", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),

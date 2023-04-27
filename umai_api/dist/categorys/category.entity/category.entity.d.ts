@@ -3,5 +3,4 @@ export declare class CategoryEntity {
     name: string;
     description: string;
     cat: CategoryEntity;
-    children: CategoryEntity[];
 }
