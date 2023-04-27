@@ -15,6 +15,10 @@ export class ReservationsService {
         return await this.reservationsRepository.findOneBy({ "id": _id });
     }
 
+    async getReservationClient(_id: number): Promise<ReservationEntity> {
+        return await this.reservationsRepository.findOneBy({ "id": _id });
+    }
+
     async createReservation(reservation: ReservationEntity) {
         return await this.reservationsRepository.save(reservation);
     }

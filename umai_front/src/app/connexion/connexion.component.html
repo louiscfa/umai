@@ -1,1 +1,23 @@
-<p>connexion works!</p>
+<div class="login">
+    <div class="form">
+        <form #createUser = 'ngForm' (ngSubmit) = "inscriptionUser(createUser.value)" *ngIf="showRegister">
+            <h1>Inscription</h1>
+            <input id="newLastname" type="text" placeholder="Nom" name="name" required="required" ngModel/>
+            <input id="newFirstname" type="text" placeholder="Prenom" name="firstname" required="required" ngModel/>
+            <input id="newPhone" type="text" placeholder="Telephone" name="phone" required="required" ngModel/>
+            <input id="newEmail" type="text" placeholder="Email" name="email" required="required" ngModel/>
+            <input id="newPassword" type="password" placeholder="password" name="password" required="required" ngModel/>
+            <button id="signupButton" class="btn btn-primary btn-block btn-large"class="btn btn-primary btn-block btn-large" disabled = "{{disable}}">Inscription</button>
+            <p id="message2" class="{{ class }}">{{message}}</p>
+            <p class="message">Already registered? <a class="lien" (click)="changeToLogin()">Sign In</a></p>
+        </form>
+        <form #connexion = 'ngForm' (ngSubmit) = "sendConnect(connexion.value)" *ngIf="showConnexion">
+            <h1>Connexion</h1>
+            <input type="text" placeholder="username" id="username" name="username" required="required" ngModel/>
+            <input type="password" placeholder="password" id="password" name="password" required="required" ngModel/>
+            <button id="loginButton" class="btn btn-primary btn-block btn-large" disabled = "{{disable}}">Connexion</button>
+            <p id="message" class="{{class}}">{{message}}</p>
+            <p class="message">Not registered? <a class="lien" (click)="changeToRegister()">Create an account</a></p>
+        </form>
+    </div>
+</div>
