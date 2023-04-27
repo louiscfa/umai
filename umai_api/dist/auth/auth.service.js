@@ -53,7 +53,8 @@ let AuthService = class AuthService {
         const payload = { username: user.email, sub: user.id };
         return {
             access_token: this.jwtService.sign(payload),
-            refresh_token: await this.generateRefreshToken(user.id)
+            refresh_token: await this.generateRefreshToken(user.id),
+            userId: user.id
         };
     }
 };

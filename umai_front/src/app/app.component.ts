@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AppService } from './services/app/app.service';
+import { Categorie } from './interface/categorie/categorie';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +10,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'umai';
   public isLoggedIn: boolean = false;
+  public categories: Categorie[] = [];
+
+  constructor(private appService: AppService) { }
 
   ngOnInit() {
+    this.appService.getData().subscribe(data => {
+      this.categories = data;
+    });
     if (localStorage.getItem("access_token"))
       this.isLoggedIn = true;
   }

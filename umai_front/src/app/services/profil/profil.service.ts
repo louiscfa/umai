@@ -9,9 +9,9 @@ export class ProfilService {
 
   constructor(private _http: HttpClient) { }
 
-  getProfil() : Profil {
-    return this._http.get('');
-  }
+ // getProfil() : Profil {
+    //return this._http.get('');
+ // }
 
   putProfil(data: any){
     return this._http.put('', data);

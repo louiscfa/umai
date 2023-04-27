@@ -13,8 +13,13 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/accueil">Accueil</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/menu">Menu</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink="/menu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </a>
+          <ul class="dropdown-menu" >
+            <li *ngFor="let categorie of categories"><a class="dropdown-item" href="#">{{categorie.name}}</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/reservation">Réservation</a>

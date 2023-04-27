@@ -15,7 +15,7 @@ export class ProfilComponent {
   }
 
   ngOnInit() {
-    this.datas = this.profilService.getProfil();
+   // this.datas = this.profilService.getProfil();
   }
 
 }
