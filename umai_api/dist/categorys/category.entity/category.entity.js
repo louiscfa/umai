@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var CategoryEntity_1;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CategoryEntity = void 0;
 const typeorm_1 = require("typeorm");
-let CategoryEntity = class CategoryEntity {
+let CategoryEntity = CategoryEntity_1 = class CategoryEntity {
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
@@ -26,16 +27,11 @@ __decorate([
     __metadata("design:type", String)
 ], CategoryEntity.prototype, "description", void 0);
 __decorate([
-    (0, typeorm_1.TreeParent)(),
+    (0, typeorm_1.ManyToOne)(cat => CategoryEntity_1, cat => cat.id),
     (0, typeorm_1.JoinColumn)({ name: 'cat' }),
     __metadata("design:type", CategoryEntity)
 ], CategoryEntity.prototype, "cat", void 0);
-__decorate([
-    (0, typeorm_1.TreeChildren)(),
-    __metadata("design:type", Array)
-], CategoryEntity.prototype, "children", void 0);
-CategoryEntity = __decorate([
-    (0, typeorm_1.Tree)('materialized-path'),
+CategoryEntity = CategoryEntity_1 = __decorate([
     (0, typeorm_1.Entity)("category")
 ], CategoryEntity);
 exports.CategoryEntity = CategoryEntity;

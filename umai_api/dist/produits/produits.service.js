@@ -43,6 +43,13 @@ let ProduitsService = class ProduitsService {
             .where('category.id = :categoryId', { categoryId: _id })
             .getMany();
     }
+    async getProductsByChildsCategory(_id) {
+        return await this.productsRepository
+            .createQueryBuilder('produit')
+            .leftJoinAndSelect('produit.cat', 'category')
+            .where('category.cat = :categoryId', { categoryId: _id })
+            .getMany();
+    }
 };
 ProduitsService = __decorate([
     (0, common_1.Injectable)(),

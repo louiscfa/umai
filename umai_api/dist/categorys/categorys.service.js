@@ -32,7 +32,16 @@ let CategorysService = class CategorysService {
     async getCategoryProducts(_id) {
         return await this.productsService.getProductsByCategory(_id);
     }
+    async getChildsCategoryProducts(_id) {
+        return await this.productsService.getProductsByChildsCategory(_id);
+    }
     async getCategoryChilds(_id) {
+        return await this.categorysRepository
+            .createQueryBuilder('category')
+            .where('category.cat = :categoryId', { categoryId: _id })
+            .getMany();
+    }
+    async getAllCategoryChilds(_id) {
         return await this.categorysRepository
             .createQueryBuilder('category')
             .where('category.cat = :categoryId', { categoryId: _id })

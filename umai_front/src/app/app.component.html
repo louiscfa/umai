@@ -26,7 +26,8 @@
           <a class="nav-link" routerLink="/profil">Mon Profil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/connexion">Connexion / Inscription </a>
+          <a class="nav-link" routerLink="/connexion" *ngIf="!isLoggedIn">Connexion / Inscription </a>
+          <a class="nav-link" routerLink="/connexion" *ngIf="isLoggedIn" (click)="deconnexion()">Deconnexion </a>
         </li>
       </ul>
     </div>
