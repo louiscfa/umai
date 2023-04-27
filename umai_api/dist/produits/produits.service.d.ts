@@ -9,4 +9,5 @@ export declare class ProduitsService {
     updateProduct(product: ProduitEntity): Promise<void>;
     deleteProduct(product: ProduitEntity): Promise<void>;
     getProductsByCategory(_id: number): Promise<ProduitEntity[]>;
+    getProductsByChildsCategory(_id: number): Promise<ProduitEntity[]>;
 }
