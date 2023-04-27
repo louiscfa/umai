@@ -6,6 +6,9 @@
 /out-tsc
 /bazel-out
 
+/umai_front/.angular
+/umai_front/node_modules
+
 # Node
 /node_modules
 npm-debug.log
