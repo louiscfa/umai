@@ -9,6 +9,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AccesComponent } from './acces/acces.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AccesComponent } from './acces/acces.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

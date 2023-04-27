@@ -1,0 +1,14 @@
+#columnProfil{
+    background-color: #F6F3E1;
+}
+
+#title{
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.btn-primary {
+    background-color: #CEC2B2;
+    border-color: #F6F3E1;
+    color: black;
+  }
