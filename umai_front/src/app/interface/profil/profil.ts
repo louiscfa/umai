@@ -1,9 +1,9 @@
 export interface Profil {
     id: number,
-    nom: string,
-    prenom: string,
-    adresse: string,
+    firstname: string,
+    lastname: string,
+    phone: string,
     email: string,
     password: string,
-    telephone: string
+    address: string
 }

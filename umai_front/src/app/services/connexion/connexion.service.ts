@@ -31,6 +31,7 @@ export class ConnexionService {
         )
         .subscribe(response => {
           localStorage.setItem('access_token', JSON.stringify(response?.access_token));
+          localStorage.setItem('userId', JSON.stringify(response?.userId))
           return response?.access_token;
         });
     }
