@@ -1,43 +1,45 @@
+<hr>
 <div class="container">
-    <div class="row">
-        <div class="col-5" id="columnProfil">
-            <h2 id="title">Mon Profil</h2>
-            <form #monProfil='ngForm' (ngSubmit)="submit(monProfil.value)" *ngFor="let data of datas">
-                <div class="col">
-                    <label class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="nomInput" name="lastname"  [(ngModel)]="data.lastname" >
-                </div>
-                <div class="col">
-                    <label class="form-label">Prénom</label>
-                    <input type="text" class="form-control" id="prenomInput" name="firstname" [(ngModel)]="data.firstname">
-                </div>
-                <div class="col">
-                    <label class="form-label">Adresse</label>
-                    <input type="text" class="form-control" id="addressInput" name="address" [(ngModel)]="data.address">
-                </div>
-                <div class="col">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control" id="emailInput" name="email" [(ngModel)]="data.email">
-                </div>
-                <div class="col">
-                    <label class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control" id="passwordInput" name="password" ngModel>
-                </div>
-                <div class="col">
-                    <label class="form-label">Téléphone</label>
-                    <input type="tel" class="form-control" pattern="[0-9]{10}" id="phoneInput" name="phone" [(ngModel)]="data.phone">
-                </div>
-                <button id="btnSave" type="submit" class="mt-3 btn btn-primary">Enregistrer</button>
-            </form>
+  <div class="row">
+    <div class="col-5" id="columnProfil">
+      <h2 id="title">Mon Profil</h2>
+      <form #monProfil='ngForm' (ngSubmit)="submit(monProfil.value)" *ngFor="let data of datas">
+        <div class="col">
+          <label class="form-label">Nom</label>
+          <input type="text" class="form-control" id="nomInput" name="lastname" [(ngModel)]="data.lastname">
         </div>
-        <div class=" col-2">
+        <div class="col">
+          <label class="form-label">Prénom</label>
+          <input type="text" class="form-control" id="prenomInput" name="firstname" [(ngModel)]="data.firstname">
         </div>
-        <div class="col-5" id="columnReservation">
-            <h2 id="title">Mes réservations</h2>
-            <div class="col" *ngFor="let data of reservations">
-                <label class="form-label">Date</label>
-                <input type="text" class="form-control" readonly="readonly" [(ngModel)]="data.dateReservation">
-            </div>
+        <div class="col">
+          <label class="form-label">Adresse</label>
+          <input type="text" class="form-control" id="addressInput" name="address" [(ngModel)]="data.address">
         </div>
+        <div class="col">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="emailInput" name="email" [(ngModel)]="data.email">
+        </div>
+        <div class="col">
+          <label class="form-label">Mot de passe</label>
+          <input type="password" class="form-control" id="passwordInput" name="password" ngModel>
+        </div>
+        <div class="col">
+          <label class="form-label">Téléphone</label>
+          <input type="tel" class="form-control" pattern="[0-9]{10}" id="phoneInput" name="phone"
+            [(ngModel)]="data.phone">
+        </div>
+        <button id="btnSave" type="submit" class="mt-3 btn btn-primary">Enregistrer</button>
+      </form>
     </div>
+    <div class=" col-2">
+    </div>
+    <div class="col-5" id="columnReservation">
+      <h2 id="title">Mes réservations</h2>
+      <div class="col" *ngFor="let data of reservations">
+        <label class="form-label">Date</label>
+        <input type="text" class="form-control" readonly="readonly" [(ngModel)]="data.dateReservation">
+      </div>
+    </div>
+  </div>
 </div>
