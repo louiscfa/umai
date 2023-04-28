@@ -11,6 +11,9 @@ export class ReservationEntity {
     @Column({ type: 'timestamp' })
     dateReservation: Date;
 
+    @Column({ type: 'boolean' })
+    isMidi: boolean;
+
     @ManyToOne(user => UserEntity, user => user.id)
     @JoinColumn({ name: 'iduser' })
     user: UserEntity;

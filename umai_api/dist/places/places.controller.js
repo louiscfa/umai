@@ -29,6 +29,9 @@ let PlacesController = class PlacesController {
     getReservations(params) {
         return this.service.getPlaceReservations(params.id);
     }
+    getPlacesDisponible(params) {
+        return this.service.getPlaceDisponible(params.date, params.isMidi);
+    }
     create(place) {
         return this.service.createPlace(place);
     }
@@ -60,6 +63,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], PlacesController.prototype, "getReservations", null);
+__decorate([
+    (0, common_1.Get)(':date/:isMidi'),
+    __param(0, (0, common_1.Param)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], PlacesController.prototype, "getPlacesDisponible", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),

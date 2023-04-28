@@ -38,6 +38,11 @@ export class ConnexionComponent {
     if (localStorage.getItem("access_token") != null) {
       this.class = "messageGood";
       this.message = "Connexion réussi !";
+      if (Number(localStorage.getItem("typeuser")) == 1) {
+        this.appComponent.setIsAdmin(true)
+      } else {
+        this.appComponent.setIsAdmin(false)
+      }
       setTimeout(() => {
         this.router.navigate(['accueil']);
         this.appComponent.connexion();

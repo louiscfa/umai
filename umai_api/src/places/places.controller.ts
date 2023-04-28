@@ -22,6 +22,11 @@ export class PlacesController {
         return this.service.getPlaceReservations(params.id);
     }
 
+    @Get(':date/:isMidi')
+    getPlacesDisponible(@Param() params){
+        return this.service.getPlaceDisponible(params.date,params.isMidi);
+    }
+
     @Post()
     create(@Body() place: PlaceEntity) {
         return this.service.createPlace(place);

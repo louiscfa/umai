@@ -1,1 +1,12 @@
-<p>menu works!</p>
+<div class="container">
+    <div class="row">
+        <div class="card col-3" *ngFor="let menu of menus">
+            <img src="../../assets/img/{{menu.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{menu.name}}  {{menu.prix}}</h5>
+                <p class="card-text">{{menu.description}}</p>
+                <a routerLink="/plat/{{menu.id}}" class="btn btn-primary">Detail</a>
+            </div>
+        </div>
+    </div>
+</div>
