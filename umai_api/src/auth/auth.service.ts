@@ -10,6 +10,7 @@ export class AuthService {
   constructor(private usersService: UsersService,
     private jwtService: JwtService) { }
 
+
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.usersService.findOne(username);
     if (user) {
@@ -35,8 +36,11 @@ export class AuthService {
     return {
       access_token: this.jwtService.sign(payload),
       refresh_token: await this.generateRefreshToken(user.id),
-      userId : user.id
+      userId : user.id,
+      typeuser: user.type.id
     };
   }
+
+  
 
 }

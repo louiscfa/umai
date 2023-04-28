@@ -9,8 +9,30 @@ import { ReservationService } from '../services/reservation/reservation.service'
 export class ReservationComponent {
   constructor(private reservationService: ReservationService) { }
 
+  isConnected: boolean = false;
+  tables:any[] =[]
+
+  ngOnInit(){
+    if(localStorage.getItem("access_token") != null){
+      this.isConnected = true;
+    }
+    else this.isConnected = false;
+
+    this.reservationService.getTable().subscribe(elem => {
+      this.tables = elem;
+    });
+  }
+
   submit(data:any){
-    this.reservationService.postData({dateReservation: data.dateReservation, iduser: /*Number(localStorage.getItem("userId"))*/1, idplace:1});
+    console.log(data)
+    this.reservationService.postData({dateReservation: data.dateReservation, user: Number(localStorage.getItem("userId")), place: Number(data.selectTable), isMidi:data.selectService});
+  }
+
+  changes(data:any){
+    console.log(data)
+     this.reservationService.getTableDisponible(data.dateReservation,data.selectService).subscribe(elem => {
+        this.tables = elem;
+    });
   }
   
 }

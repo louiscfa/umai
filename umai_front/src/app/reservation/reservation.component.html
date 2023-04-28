@@ -5,17 +5,22 @@
       <form #createReservation = 'ngForm' (ngSubmit) = "submit(createReservation.value)">
         <div class="form-group">
           <label for="date-input">Date:</label>
-          <input type="date" class="form-control" id="date-input" name="dateReservation"required ngModel>
+          <input type="date" class="form-control" id="date-input" name="dateReservation"required ngModel (change)='changes(createReservation.value)'>
         </div>
         <div class="form-group">
           <label for="service">Choisir le service :</label>
-          <select class="form-control" id="service">
-            <option>Service du midi</option>
-            <option>Service du soir</option>
+          <select class="form-control" id="service" name="selectService"ngModel (change)='changes(createReservation.value)'>
+            <option value="0">Service du midi</option>
+            <option value="1">Service du soir</option>
+          </select>
+          <label for="service">Choisir la table :</label>
+          <select class="form-control" id="tables" name="selectTable" ngModel>
+            <option *ngFor="let table of tables" value="{{table.id}}">Table {{table.id}} : {{table.nombrePlace}} places</option>
           </select>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3 mb-5">Réserver</button>
+        <button type="submit" class="btn btn-primary mt-3 mb-5" *ngIf="isConnected">Réserver</button>
+        <a *ngIf="!isConnected">Connectez vous pour pouvoir réserver !</a>
       </form>
     </div>
   </div>

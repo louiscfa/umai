@@ -11,6 +11,8 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { AccesComponent } from './acces/acces.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PlatComponent } from './plat/plat.component';
+import { ReservationAdminComponent } from './reservation-admin/reservation-admin.component';
 
 
 
@@ -23,6 +25,8 @@ import { FormsModule } from '@angular/forms';
     ConnexionComponent,
     AccueilComponent,
     AccesComponent,
+    PlatComponent,
+    ReservationAdminComponent,
   ],
   imports: [
     BrowserModule,
