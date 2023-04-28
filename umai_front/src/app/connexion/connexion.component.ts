@@ -35,9 +35,14 @@ export class ConnexionComponent {
     console.log('ok');
     var reponse = this.connexionService.postData("POST", "http://localhost:3000/auth/login",
       { username: data.username, password: data.password }, true);
-    if (reponse != null) {
+    if (localStorage.getItem("access_token") != null) {
       this.class = "messageGood";
       this.message = "Connexion réussi !";
+      if (Number(localStorage.getItem("typeuser")) == 1) {
+        this.appComponent.setIsAdmin(true)
+      } else {
+        this.appComponent.setIsAdmin(false)
+      }
       setTimeout(() => {
         this.router.navigate(['accueil']);
         this.appComponent.connexion();

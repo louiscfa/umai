@@ -24,6 +24,10 @@ __decorate([
     __metadata("design:type", Date)
 ], ReservationEntity.prototype, "dateReservation", void 0);
 __decorate([
+    (0, typeorm_1.Column)({ type: 'boolean' }),
+    __metadata("design:type", Boolean)
+], ReservationEntity.prototype, "isMidi", void 0);
+__decorate([
     (0, typeorm_1.ManyToOne)(user => user_entity_1.UserEntity, user => user.id),
     (0, typeorm_1.JoinColumn)({ name: 'iduser' }),
     __metadata("design:type", user_entity_1.UserEntity)

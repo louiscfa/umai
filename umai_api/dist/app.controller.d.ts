@@ -9,10 +9,12 @@ export declare class AppController {
         access_token: string;
         refresh_token: string;
         userId: any;
+        typeuser: any;
     }>;
     login(req: any): Promise<{
         access_token: string;
         refresh_token: string;
         userId: any;
+        typeuser: any;
     }>;
 }

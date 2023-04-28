@@ -1,0 +1,7 @@
+<div class="col-5" id="columnReservation">
+    <h2 id="title">Toutes les réservations</h2>
+    <div class="col" *ngFor="let data of reservations">
+        <label class="form-label"><b>{{data.user.firstname}} {{data.user.lastname}}</b></label>
+        <input type="text" class="form-control" readonly="readonly" [(ngModel)]="data.dateReservation">
+    </div>
+</div>

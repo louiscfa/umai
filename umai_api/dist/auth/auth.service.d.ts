@@ -10,5 +10,6 @@ export declare class AuthService {
         access_token: string;
         refresh_token: string;
         userId: any;
+        typeuser: any;
     }>;
 }

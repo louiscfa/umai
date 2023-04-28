@@ -15,7 +15,6 @@ export class ProfilService {
     return this._http.get<Reservation[]>('http://localhost:3000/users/'+localStorage.getItem('userId')+'/reservations');
   }
 
-
   getProfil() {
    return this._http.get<Profil>('http://localhost:3000/users/'+localStorage.getItem('userId'));
   }

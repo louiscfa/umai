@@ -13,8 +13,25 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="/accueil">Accueil</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/menu">Menu</a>
+        <li class="nav-item dropdown" *ngIf="isAdmin">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin
+          </a>
+          <ul class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/admin/reservation" >Reservation</a>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </a>
+          <ul class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/menu/0" (click)="refreshMenus(0)">Tout</a>
+            <li *ngFor="let categorie of categories">
+              <a class="dropdown-item" routerLink="/menu/{{categorie.id}}"
+                (click)="refreshMenus(categorie.id)">{{categorie.name}}</a>
+            </li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/reservation">Réservation</a>

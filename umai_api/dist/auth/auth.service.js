@@ -54,7 +54,8 @@ let AuthService = class AuthService {
         return {
             access_token: this.jwtService.sign(payload),
             refresh_token: await this.generateRefreshToken(user.id),
-            userId: user.id
+            userId: user.id,
+            typeuser: user.type.id
         };
     }
 };
